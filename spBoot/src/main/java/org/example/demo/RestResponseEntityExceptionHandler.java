@@ -1,22 +1,18 @@
 package org.example.demo;
 
 import jakarta.validation.ConstraintViolationException;
-import org.example.demo.controller.SpBootController;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 
 @ControllerAdvice
 class NameFormatAdvice {
     @ExceptionHandler(ConstraintViolationException.class )
-    public String handleException(ConstraintViolationException ex) {
-        //model.addAttribute("errorMessage", ex.getMessage());
-        Logger logger = LoggerFactory.getLogger(SpBootController.class);
-        //logger.warn("!!!!!!!!!!!!!!!!!!!!!!!Q@@SDRGDFGGDG");
-        return "redirect:/custom_error";
+    public RedirectView handleException(RedirectAttributes redirectAttributes, ConstraintViolationException ex) {
+        redirectAttributes.addAttribute("errMess", ex.getMessage());
+        return new RedirectView("custom_error");
     }
 
 

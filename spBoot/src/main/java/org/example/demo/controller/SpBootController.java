@@ -26,7 +26,7 @@ public class SpBootController {
 
     @PostMapping (value="/nameToChar")
     @Operation(summary = "separate name into symbols",description = "...")
-    public String charResp(Model model, @RequestParam("name") @Pattern(regexp = "^[A-Z][a-z]*(?: [A-Z][a-z]*)*$", message = "must be  ^[A-Z][a-z]*(?: [A-Z][a-z]*)*$ ")  String name){
+    public String charResp(Model model, @RequestParam("name") @Pattern(regexp = "^[A-Z][a-z]*(?: [A-Z][a-z]*)*$", message = "must be  ^[A-Z][a-z]*(?: [A-Z][a-z]*)*$")  String name){
         StringBuilder charString= new StringBuilder();
 
 
@@ -46,8 +46,9 @@ public class SpBootController {
 
 
     @RequestMapping("/custom_error")
-    @Operation(summary = "get root page")
-    public String customError(){
+    @Operation( summary = "get root page")
+    public String customError( Model model, @ModelAttribute("errMess") Object flashAttribute){
+        model.addAttribute("errMess", flashAttribute);
         return "custom_error";
     }
 
