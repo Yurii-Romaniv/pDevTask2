@@ -53,7 +53,6 @@ public class SpBootController {
     }
 
 
-
     @RequestMapping("/")
     @Operation(summary = "get root page")
     public String rootPage(){
