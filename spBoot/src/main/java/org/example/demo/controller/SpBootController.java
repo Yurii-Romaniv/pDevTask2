@@ -33,7 +33,6 @@ public class SpBootController {
 
         Character[] characters = {'f','o', 'r'  ,'d' , 'e', 'b', 'u', 'g'};///myLib.GetChars(new String[]{name});
 
-
         for (Character character : characters) {
             charString.append(character).append(" ");
         }
