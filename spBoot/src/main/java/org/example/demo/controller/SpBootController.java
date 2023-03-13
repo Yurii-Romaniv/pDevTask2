@@ -3,7 +3,7 @@ package org.example.demo.controller;
 import io.swagger.annotations.Api;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.constraints.Pattern;
-import org.example.myLib;
+//import org.example.myLib;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
@@ -31,7 +31,7 @@ public class SpBootController {
 
 
 
-        Character[] characters = myLib.GetChars(new String[]{name});
+        Character[] characters = {'f','o', 'r'  ,'d' , 'e', 'b', 'u', 'g'};///myLib.GetChars(new String[]{name});
 
 
         for (Character character : characters) {

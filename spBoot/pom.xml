@@ -54,7 +54,7 @@
 			<scope>test</scope>
 		</dependency>
 
-
+<!--
 		<dependency>
 			<groupId>org.example</groupId>
 			<artifactId>pDevtask1</artifactId>
@@ -62,7 +62,7 @@
 			<scope>system</scope>
 			<systemPath>${pom.basedir}/src/main/resources/pDevTask1-1.0-SNAPSHOT.jar</systemPath>
 		</dependency>
-
+-->
 
 
 	</dependencies>
